@@ -4,7 +4,7 @@ A simple ToDo application built with Node.js and containerized with Docker.
 
 ## Project Description
 
-This application lets you create and manage simple ToDo entries. It was built as part of the final assignment **Development Fundamentals 2026**, applying the topics **Markdown, Git, GitHub, and Docker**.
+This application lets you create and manage simple ToDo entries. It was built as part of the final assignment **Development Fundamentals**, applying the topics **Markdown, Git, GitHub, and Docker**.
 
 The application can run either locally with Node.js or inside a Docker container, as shown below.
 
