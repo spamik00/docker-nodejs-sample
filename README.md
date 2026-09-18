@@ -1,48 +1,65 @@
-# **Thema:** Erstellen einer ToDo-Applikation mit Markdown, Git, GitHub und Docker
+# ToDo App
 
-In dieser Abschlussaufgabe werden alle erlernten Fähigkeiten in den Bereichen **Markdown**, **Git**, **GitHub** und **Docker** kombiniert. Die Aufgabe besteht darin, eine ToDo-Applikation zu erstellen und diese in einem Docker-Container bereitzustellen.
+Eine einfache ToDo Applikation, entwickelt mit Node.js und containerisiert mit Docker.
 
-### **Aufgabenstellung:**
+## Projektbeschreibung
 
-1. **GitHub-Fork erstellen:**
-   - Erstelle einen **Fork** des folgenden GitHub-Repositories: [docker-nodejs-sample](https://github.com/ICT-BLJ/docker-nodejs-sample).
-   - Clone deinen Fork lokal auf deinen Computer.
+Diese Anwendung ermöglicht das Erstellen und Verwalten einfacher ToDo Einträge. Sie basiert auf Node.js und wird im Rahmen der Abschlussaufgabe "Development Fundamentals" mit Docker containerisiert.
 
-2. **Erstellen einer README-Datei in Markdown:**
-   - Erstelle eine **README.md** Datei im Root-Verzeichnis des Projekts.
-   - Die README soll alle Schritte zur **Installation des Projekts** enthalten. Dazu gehören:
-     - Klonen des Repositories
-     - Installation der notwendigen Pakete
-     - Docker-Konfiguration und -Installation
-     - Starten der Applikation in einem Docker-Container
-   - Nutze [Markdown](https://www.markdownguide.org/cheat-sheet/) für die Struktur und Formatierung der Datei.
+## Voraussetzungen
 
-3. **Dokumentation der Vorgehensweise:**
-   - Verfasse eine vollständige **Dokumentation in Word**, in der die Arbeitsschritte beschrieben werden. Diese Schritte sind:
-     - Klonen des Repositories
-     - Einrichtung der Entwicklungsumgebung
-     - Erstellung der README.md
-     - Verwendung von Git (Commit, Push)
-     - Erstellung und Nutzung von Docker-Containern
-   - Verwende die während des Office-Kurses erarbeiteten Kenntnisse für das Erstellen dieses Dokuments.
+* [Node.js](https://nodejs.org/) (Version 24 oder neuer)
+* [Docker](https://www.docker.com/)
+* [Git](https://git-scm.com/)
 
-4. **Dockerize das Node.js-Projekt:**
-   - Verfolge die Anleitung unter [docs.docker.com](https://docs.docker.com/guides/language/nodejs/containerize/) ab dem Schritt **"Initialize Docker assets"**.
-   - Dein Ziel ist es, das Projekt in einem Docker-Container lauffähig zu machen, sodass am Ende eine **ToDo-Applikation** in einem Docker-Container bereitsteht.
+## Repository klonen
 
-5. **Git-Workflows:**
-   - Arbeite mit **Git**, um Änderungen regelmäßig zu committen und auf GitHub zu pushen.
-   - Verwende sinnvolle Commit-Nachrichten, um deinen Fortschritt zu dokumentieren.
-   - Stelle sicher, dass dein finaler Stand auf GitHub vorhanden ist.
+```bash
+git clone https://github.com/DEIN-BENUTZERNAME/docker-nodejs-sample.git
+cd docker-nodejs-sample
+```
 
-6. **Abgabe:**
-   - **Dokumentation:** Lade die erstellte Word-Dokumentation (inkl. Screenshots und Beschreibung der Schritte) in dein Repository hoch.
-   - **GitHub-Link:** Stelle den Link zu deinem GitHub-Repository bereit, das den finalen Stand des Projekts enthält.
+## Pakete installieren
 
-### **Ziele der Aufgabe:**
-- Anwendung und Vertiefung von Git und GitHub.
-- Verfassen einer strukturierten Anleitung mit Markdown.
-- Containerisieren einer Node.js-Anwendung mit Docker.
-- Dokumentation des gesamten Prozesses in einem Word-Dokument.
-  
-Viel Erfolg bei der Umsetzung!
+```bash
+npm install
+```
+
+## Anwendung lokal starten
+
+```bash
+npm start
+```
+
+Die Anwendung ist danach unter `http://localhost:3000` erreichbar.
+
+## Docker Image erstellen
+
+```bash
+docker build -t todo-app .
+```
+
+## Anwendung mit Docker starten
+
+```bash
+docker run --name todo-container -p 3000:3000 todo-app
+```
+
+## Anwendung mit Docker Compose starten
+
+```bash
+docker compose up --build
+```
+
+## Anwendung stoppen
+
+```bash
+docker stop todo-container
+docker rm todo-container
+```
+
+Oder bei Docker Compose:
+
+```bash
+docker compose down
+```
